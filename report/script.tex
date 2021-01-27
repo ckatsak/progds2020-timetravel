@@ -1,0 +1,38 @@
+\section{Περιβάλλον και Εκτέλεση}
+
+Η υλοποίηση της άσκησης περιλήφθηκε στο σύνολό της σε ένα Python script, το οποίο αναπτύχθηκε σε περιβάλλον Linux και Python 3.8.5 x86, και το οποίο, εκτελούμενο με τα κατάλληλα ορίσματα από την γραμμή εντολών, παράγει τα επιθυμητά κάθε φορά αποτελέσματα.
+
+Οι διαθέσιμες επιλογές ορισμάτων κλήσης του παραδοτέου script από την γραμμή εντολών του Linux συνοψίζονται από το ίδιο το script με την χρήση της παραμέτρου \texttt{-h} ή \texttt{--help}, όπως φαίνεται παρακάτω:
+
+\begin{minted}[linenos = false]{Text}
+  $ python3 timetravel.py --help
+  usage: timetravel.py [-h] [-v] [-i STOCKS] [-o RESULT] [-p PLOT] (--small | --large)
+  
+  ProgDS @ ECE NTUA, Fall 2020; by Christos Katsakioris
+  
+  optional arguments:
+    -h, --help            show this help message and exit
+    -v, --verbosity       set the verbosity of the log (max: `-vv`)
+    -i STOCKS, --stocks STOCKS
+                          path of the input directory (`Stocks/`)
+    -o RESULT, --result RESULT
+                          path to flush the result sequence into
+    -p PLOT, --plot PLOT  path to flush the result plot into
+    --small               produce a small sequence
+    --large               produce a large sequence
+\end{minted}
+
+Βάσει και των παραπάνω, μπορούμε να εκκινήσουμε την εκτέλεση του script για την παραγωγή της μικρής ακολουθίας χωρίς εκτενή μηνύματα εξόδου, με την παρακάτω εντολή:
+
+\begin{minted}[linenos = false]{Text}
+  $ python3 timetravel.py --small -i $PATH_TO_STOCKS_DIR
+\end{minted}
+
+ενώ αντίστοιχα για την παραγωγή της μεγάλης ακολουθίας:
+
+\begin{minted}[linenos = false]{Text}
+  $ python3 timetravel.py --large -i $PATH_TO_STOCKS_DIR
+\end{minted}
+
+Με αυτόν τον τρόπο, οι παραγόμενες ακολουθίες πρόκειται να αποθηκευτούν αντιστοίχως στα αρχεία \texttt{small.txt} και \texttt{large.txt} του τρέχοντος καταλόγου εργασίας, ενώ τα διαγράμματα αποτίμησης στα αρχεία \texttt{small.png} και \texttt{large.png} του τρέχοντος καταλόγου εργασίας, αντιστοίχως.
+Ωστόσο, παρέχεται η δυνατότητα ορισμού εναλλακτικών διαδρομών του συστήματος αρχείου τόσο για την περίπτωση του αρχείου εξόδου (όρισμα γραμμής εντολών \texttt{-o} ή \texttt{--result}), όσο και του αρχείου του διαγράμματος αποτίμησης (όρισμα γραμμής εντολών \texttt{-p} ή \texttt{--plot}), όπως είναι εμφανές και στην παραπάνω παρατεθημένη έξοδο του script.
